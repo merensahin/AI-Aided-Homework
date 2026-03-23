@@ -7,7 +7,6 @@ This project strictly relies on language-native features (e.g., `net/http`, goro
 - **Concurrent Crawling:** Goroutine-based crawler with 3 layers of back-pressure (queue limit, concurrency semaphore, rate limiting).
 - **Thread-safe Indexing:** In-memory inverted index safely accessed via `sync.RWMutex` for concurrent reads/writes.
 - **Live Search:** Search for keywords while indexing is actively running.
-- **Persistence (Bonus):** The inverted index and crawler states are automatically written to a `storage/` directory and resumed on restart.
 - **Clean UI:** Responsive, vanilla JavaScript dashboard for managing crawlers and performing searches.
 
 ## Prerequisites
