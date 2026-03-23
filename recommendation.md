@@ -1,0 +1,5 @@
+# Architectural Recommendation for High-Scale Production
+
+To transition this local, single-machine web crawler into a high-scale production environment, the architecture must evolve from an in-memory, thread-based concurrency model to a distributed, horizontally scalable system.
+
+The most critical change is decoupling the components: replacing the Go channels with a robust distributed message broker (such as Apache Kafka or RabbitMQ) to manage the URL frontier and back-pressure across multiple crawler instances. The in-memory visited set should be migrated to a distributed cache like Redis or a Bloom Filter to ensure cross-node deduplication. Additionally, the file-based inverted index should be replaced with a distributed search engine like Elasticsearch or OpenSearch, which naturally handles sharding, replication, and complex relevancy ranking at a global scale. Finally, worker nodes could be deployed as stateless containers orchestrated by Kubernetes, allowing dynamic auto-scaling based on queue depth.

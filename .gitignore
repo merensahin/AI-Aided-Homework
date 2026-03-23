@@ -1,0 +1,18 @@
+# Directories
+storage/
+
+# Binaries
+hw1
+
+# Log/data files
+*.data
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
